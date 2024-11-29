@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MangaReview</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--Header-->
+        <div class = "container">
+            <div class = "jumbotron text-center">
+                <h1 class = "display-1">MangaReview</h1>
+                <p class = "lead">Here you can find top manga reviews for your next read!</p>
+            </div>
+            <div class = "mb-4">
+                <ul class = "nav nav-pills nav-fill">
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "index.html">Home</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "review.html">Write Review</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "contact.html">Contact</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "login.html">Login</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link active" href = "registration.html">Registration</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+        <!--Form for Registration-->
+        <div class = "container">
+                <form>
+                    <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "email">Email:</label>
+                        <input type = "email" class = "form-control" id = "email" name = "email" placeholder = "Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class = "form-group">
+                    <p>Interested Genres:</p>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="shounen">
+                            <label class="form-check-label" for="shounen">Shounen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="action">
+                            <label class="form-check-label" for="action">Action</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fantasy">
+                            <label class="form-check-label" for="fantasy">Fantasy</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="horror">
+                            <label class="form-check-label" for="horror">Horror</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="romance">
+                            <label class="form-check-label" for="romance">Romance</label>
+                        </div>
+                        </div>
+                    <input type = "button" class="btn btn-primary" value = "Register" onclick = "Submit()">
+                </form>
+            </div>
+
+
+            <div class="footer mt-5 bg-dark text-white text-center py-3">
+                <p>&copy; 2024 Vincent Nguyen. All rights reserved.</p>
+                <address>
+                Written by <a href="mailto:vincent9@my.yorku.ca" class="text-white">Vincent Nguyen</a>.<br>
+                Visit us at: <a href = "yorku.ca">yorku.ca</a><br>
+                4700 Keele St, North York, ON M3J 1P3<br>
+                Canada
+                </address>
+            </div>
+    </body>
+
+    <!--JavaScript to Register Users to LocalStorage-->
+    <script>
+    function Submit() {
+    let dataEntered = retrieveData();
+    let readData = readingDataFromLocalStorage(dataEntered);
+}
+
+function retrieveData() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let arr = [username, password];
+    return arr;
+    
+}
+
+function readingDataFromLocalStorage(dataEntered) {
+    let n = localStorage.setItem("Username", dataEntered[0]);
+    let p = localStorage.setItem("Password", dataEntered[1]);
+
+    let n1 = localStorage.getItem("Username", n);
+    let p1 = localStorage.getItem("Password", p);
+
+    let arr = [n1,p1];
+    return arr;
+}
+    </script>
+
+
+
+</html>

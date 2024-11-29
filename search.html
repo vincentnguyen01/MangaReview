@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MangaReview</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--Header-->
+        <div class = "container">
+            <div class = "jumbotron text-center">
+                <h1 class = "display-1">MangaReview</h1>
+                <p class = "lead">Here you can find top manga reviews for your next read!</p>
+            </div>
+            <div class = "mb-4">
+                
+                <ul class = "nav nav-pills nav-fill">
+                    <li class = "nav-item">
+                        <a class = "nav-link active" href = "index.html">Home</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "review.html">Write Review</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "contact.html">Contact</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "login.html">Login</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href = "registration.html">Registration</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+
+    <div class = "container">
+        <h1 class = "display-2 text-center font-weight-bold">No result found.</h1><br>
+        <img src = "6855128.png" class = "img-fluid mx-auto d-block">
+        <div class = "form-inline">
+            <h2 class = "display-4 font-italic">Would you like to write a review?‎ ‎ ‎</h2>
+            <input type = "button" class = "btn btn-outline-primary btn-lg" value = "Write Review" onclick = "redirect()">
+        </div>
+    </div>
+
+    <div class="footer mt-5 bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Vincent Nguyen. All rights reserved.</p>
+        <address>
+        Written by <a href="mailto:webmaster@example.com" class="text-white">Vincent Nguyen</a>.<br>
+        Visit us at: <a href = "yorku.ca">yorku.ca</a><br>
+        4700 Keele St, North York, ON M3J 1P3<br>
+        Canada
+        </address>
+    </div>
+    </body>
+    <script>
+        function redirect() {
+            window.location.href = "review.html";
+        }
+    </script>
+</html>
