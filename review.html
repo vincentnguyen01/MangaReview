@@ -24,15 +24,13 @@
                             <a class = "nav-link" href = "contact.html">Contact</a>
                         </li>
                         <li class = "nav-item">
-                            <a class = "nav-link" href = "login.html">Login</a>
-                        </li>
-                        <li class = "nav-item">
-                            <a class = "nav-link" href = "registration.html">Registration</a>
+                            <a class = "nav-link" href = "login.html">Logout</a>
                         </li>
                     </ul>
             </div>
         </div>
 
+        <!--Manga Review Form-->
         <div class = "container">
         <form id = reviewForm>
         
@@ -63,10 +61,11 @@
         </form>
         </div>
 
+        <!--Footer-->
         <div class="footer mt-5 bg-dark text-white text-center py-3">
             <p>&copy; 2024 Vincent Nguyen. All rights reserved.</p>
             <address>
-            Written by <a href="mailto:webmaster@example.com" class="text-white">Vincent Nguyen</a>.<br>
+            Written by <a href="mailto:vincent9@my.yorku.ca" class="text-white">Vincent Nguyen</a>.<br>
             Visit us at: <a href = "yorku.ca">yorku.ca</a><br>
             4700 Keele St, North York, ON M3J 1P3<br>
             Canada
@@ -74,18 +73,28 @@
         </div>
 
     </body>
+
     <script>
+        /* Submit Function */
         function Submit() {
     let dataEntered = retrieveData();
     let readData = readingDataFromLocalStorage(dataEntered);
 }
 
+//CREATE DATA
 function retrieveData() {
     let title = document.getElementById("title").value;
     let review = document.getElementById("review").value;
     let rating = document.getElementById("rating").value;
     let arr = [title, review, rating];
-    return arr;
+
+    if (arr.includes("")) {
+        window.alert("Review Submitation Failed. Please try again.");
+    } else {
+        window.alert("Review Submitted!");
+        return arr;
+    }
+
     
 }
 

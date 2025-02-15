@@ -24,36 +24,44 @@
                         <a class = "nav-link" href = "contact.html">Contact</a>
                     </li>
                     <li class = "nav-item">
-                        <a class = "nav-link" href = "login.html">Login</a>
+                        <a class = "nav-link" href = "login.html">Logout</a>
                     </li>
-                    <li class = "nav-item">
-                        <a class = "nav-link" href = "registration.html">Registration</a>
-                    </li>
-                </ul>
         </div>
     </div>
 
-
+    <!--Search Result Display-->
     <div class = "container">
-        <h1 class = "display-2 text-center font-weight-bold">No result found.</h1><br>
-        <img src = "6855128.png" class = "img-fluid mx-auto d-block">
+        <div id = "header"></div>
+        <img src = "6855128.png" class = "img-fluid mx-auto d-block" id = image>
         <div class = "form-inline">
             <h2 class = "display-4 font-italic">Would you like to write a review?‎ ‎ ‎</h2>
             <input type = "button" class = "btn btn-outline-primary btn-lg" value = "Write Review" onclick = "redirect()">
         </div>
     </div>
 
+    <!--Footer-->
     <div class="footer mt-5 bg-dark text-white text-center py-3">
         <p>&copy; 2024 Vincent Nguyen. All rights reserved.</p>
         <address>
-        Written by <a href="mailto:webmaster@example.com" class="text-white">Vincent Nguyen</a>.<br>
+        Written by <a href="mailto:vincent9@my.yorku.ca" class="text-white">Vincent Nguyen</a>.<br>
         Visit us at: <a href = "yorku.ca">yorku.ca</a><br>
         4700 Keele St, North York, ON M3J 1P3<br>
         Canada
         </address>
     </div>
     </body>
+
+    <!--Script for Creating Header Text and redirect function -->
     <script>
+        
+        let search = localStorage.getItem("Search"); //grabs localStorage item
+        let resultPage = document.createElement("h1"); //creates h1 elent
+        resultPage.className = "display-2 text-center font-weight-bold";
+        resultPage.innerText = "No result found for " + "\"" + search + "\""; //text inside h1 element
+       header.appendChild(resultPage);
+;       
+
+
         function redirect() {
             window.location.href = "review.html";
         }

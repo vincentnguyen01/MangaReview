@@ -25,10 +25,7 @@
                             <a class = "nav-link" href = "contact.html">Contact</a>
                         </li>
                         <li class = "nav-item">
-                            <a class = "nav-link" href = "login.html">Login</a>
-                        </li>
-                        <li class = "nav-item">
-                            <a class = "nav-link" href = "registration.html">Registration</a>
+                            <a class = "nav-link" href = "login.html">Logout</a>
                         </li>
                         <form class="form-inline">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search..." id = "search">
@@ -37,66 +34,69 @@
                     </ul>
             </div>
         </div>
+        <!--First Row of Mangas-->
         <div class="container">
             <div class = "mb-4">
                 <div class="row">
                     <div class="col">
                         <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Naruto</h5>
+                                    <p class="card-text">Adapted from a comic by Masashi Kishimoto, this animated hit follows the adventures of Naruto Uzumaki, a boy who is determined to become a Hokage, the ninja in his village who is acknowledged as the leader and the strongest of them all.</p>
                                 </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title">Bleach</h5>
+                                <p class="card-text">Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.</p>
                             </div>
                     </div>
                     </div>
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title">Jujutsu Kaisen</h5>
+                                <p class="card-text">After he swallows a cursed talisman and becomes a curse, Yuji Itadori enrolls into a shaman"s school to find the remaining talismans and eliminate the curse.</p>
                             </div>
                     </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Second Row -->
             <div class = "mb-4">
                 <div class="row">
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title">Dragon Ball Z</h5>
+                                <p class="card-text">"Dragon Ball Z" follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. "Dragon Ball Z" teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.</p>
                             </div>
                     </div>
                     </div>
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title">One Punch Man</h5>
+                                <p class="card-text">Superheroes often have exciting superpowers that help them defeat the evil villains that they battle, but that"s not necessarily the case for Saitama. Although he"s a superhuman, his power isn"t as exciting as X-ray vision or invincibility -- instead, he has the ability to defeat any opponent with a single punch.</p>
                             </div>
                     </div>
                     </div>
                     <div class="col">
+                        <!-- User Made Review-->
                         <div id = "card-container"></div>
                     </div>
                 </div>
             </div>
         </div>
             
-
+        <!--Footer-->
         <div class="footer mt-5 bg-dark text-white text-center py-3">
             <p>&copy; 2024 Vincent Nguyen. All rights reserved.</p>
             <address>
-            Written by <a href="mailto:webmaster@example.com" class="text-white">Vincent Nguyen</a>.<br>
+            Written by <a href="mailto:vincent9@my.yorku.ca" class="text-white">Vincent Nguyen</a>.<br>
             Visit us at: <a href = "yorku.ca">yorku.ca</a><br>
             4700 Keele St, North York, ON M3J 1P3<br>
             Canada
@@ -105,45 +105,48 @@
 
 
         <script>
-
+        /** Search Function */
         function Search(string) {
-
+            localStorage.setItem("Search", document.getElementById("search").value);
             if (window.find(string) == true) {
-                window.find(string);
+                window.find(string); //locations the string in the window 
             } else {
-                window.location.href = "search.html";
+                window.location.href = "search.html"; //redirect if result is not found
             }
         }              
                 
-        if (localStorage.getItem("Title") != null ) {
+        if (localStorage.getItem("Title") != null ) { //To ensure that a review has been posted
 
+        //variables
         let title = localStorage.getItem("Title");
         let review = localStorage.getItem("Review");
         let rating = localStorage.getItem("Rating");
 
-        let card = document.createElement('div');
-        card.className = 'card';
+        //Creating bootstrap card component
+        let card = document.createElement("div"); 
+        card.className = "card";
 
-        let cardImage = document.createElement('img');
-        cardImage.className = 'card-img-top';
+        let cardImage = document.createElement("img");
+        cardImage.className = "card-img-top";
 
-        let cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-        let cardTitle = document.createElement('h5');
+        let cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+        let cardTitle = document.createElement("h5");
         cardTitle.innerText = title;
-        cardTitle.className = 'card-title';
+        cardTitle.className = "card-title";
 
-        let cardReview = document.createElement('p');
+        let cardReview = document.createElement("p");
         cardReview.innerText = review + " Rating: " + rating;
-        cardReview.className = 'card-text';
+        cardReview.className = "card-text";
 
-
+        //Appending all card elements to main card
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardReview);
 
         card.appendChild(cardBody);
 
-        document.getElementById('card-container').appendChild(card);
+        //appending card to div to display on index page
+        document.getElementById("card-container").appendChild(card);
         }
 
         </script>
